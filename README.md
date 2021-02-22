@@ -1,5 +1,9 @@
 # リファクタリング・チャレンジ （リバーシ編） iOS版
 
+<details>
+<summary><b>Duplicate先の原文はこちら</b></summary>
+<div>
+
 本チャレンジは、 _Fat View Controller_ として実装された[リバーシ](https://en.wikipedia.org/wiki/Reversi)アプリをリファクタリングし、どれだけクリーンな設計とコードを実現できるかというコンペティションです（ジャッジが優劣を判定するわけではなく、設計の技を競い合うのが目的です）。
 
 ![アプリのスクリーンショット](img/screenshot.png)
@@ -449,3 +453,20 @@ class ViewController: UIViewController
 ## License
 
 [MIT License](LICENSE)
+
+</div>
+</details>
+<br />
+
+---
+#### ※ 下記はDuplicate先の原文に追記したもの
+  
+  
+## 課題取り組み内容
+### 開発環境
+- Xcode version 12.0
+- pod version 1.9.3
+- 開発ターゲット iOS ...  
+
+### リファクタリングの考え方
+- 
