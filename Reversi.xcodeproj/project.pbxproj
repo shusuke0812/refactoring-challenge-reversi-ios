@@ -68,47 +68,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9C950F8725F0936400A85CAF /* Storyboards */ = {
+		9C950F9325F09E9500A85CAF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				D642BDBE23A9FE4700396732 /* LaunchScreen.storyboard */,
 				D642BDB923A9FE4500396732 /* MainViewController.storyboard */,
 			);
-			name = Storyboards;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		9C9DA9A025F0773700AFF10D /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				D642BDB723A9FE4500396732 /* MainViewController.swift */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		9C9DA9A125F0774200AFF10D /* ViewModels */ = {
+		9C950F9425F09EB500A85CAF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				9C950F8C25F0972B00A85CAF /* MainViewModel.swift */,
 			);
-			name = ViewModels;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		D636B3A123D43203007F370F /* Views */ = {
+		9C950F9725F09F0D00A85CAF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D642BDB723A9FE4500396732 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9C950F9C25F09F5300A85CAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				D642BDDB23AA137C00396732 /* BoardView.swift */,
 				D642BDD523AA0B3900396732 /* CellView.swift */,
 				D636B39E23D35043007F370F /* DiskView.swift */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		D636B3A423D432D3007F370F /* DataTypes */ = {
+		9C950F9D25F09F6700A85CAF /* DataTypes */ = {
 			isa = PBXGroup;
 			children = (
 				D642BDD723AA0B5700396732 /* Disk.swift */,
 			);
-			name = DataTypes;
+			path = DataTypes;
 			sourceTree = "<group>";
 		};
 		D642BDA723A9FE4500396732 = {
@@ -132,15 +132,15 @@
 		D642BDB223A9FE4500396732 /* Reversi */ = {
 			isa = PBXGroup;
 			children = (
-				9C950F8725F0936400A85CAF /* Storyboards */,
-				9C9DA9A125F0774200AFF10D /* ViewModels */,
-				9C9DA9A025F0773700AFF10D /* ViewControllers */,
+				9C950F9D25F09F6700A85CAF /* DataTypes */,
+				9C950F9C25F09F5300A85CAF /* Views */,
+				9C950F9725F09F0D00A85CAF /* ViewControllers */,
+				9C950F9425F09EB500A85CAF /* ViewModels */,
+				9C950F9325F09E9500A85CAF /* Storyboards */,
 				D642BDB323A9FE4500396732 /* AppDelegate.swift */,
 				D642BDB523A9FE4500396732 /* SceneDelegate.swift */,
 				D642BDBC23A9FE4700396732 /* Assets.xcassets */,
 				D642BDC123A9FE4700396732 /* Info.plist */,
-				D636B3A123D43203007F370F /* Views */,
-				D636B3A423D432D3007F370F /* DataTypes */,
 			);
 			path = Reversi;
 			sourceTree = "<group>";
