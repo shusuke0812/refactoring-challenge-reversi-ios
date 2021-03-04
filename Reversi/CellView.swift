@@ -1,3 +1,7 @@
+/**
+ * 盤のセルを表す`UIView`のサブクラス
+ */
+
 import UIKit
 
 private let animationDuration: TimeInterval = 0.25
@@ -6,7 +10,9 @@ public class CellView: UIView {
     private let button: UIButton = UIButton()
     private let diskView: DiskView = DiskView()
     
+    // MEMO: `_`は内部のみで使うprivateなストアドプロパティを明示するために使用していると思われる
     private var _disk: Disk?
+    /// ディスクの色を設定
     public var disk: Disk? {
         get { _disk }
         set { setDisk(newValue, animated: true) }
@@ -21,56 +27,14 @@ public class CellView: UIView {
         super.init(coder: coder)
         setUp()
     }
-    
-    private func setUp() {
-        do { // button
-            button.translatesAutoresizingMaskIntoConstraints = false
-            do { // backgroundImage
-                UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
-                defer { UIGraphicsEndImageContext() }
-                
-                let color: UIColor = UIColor(named: "CellColor")!
-                color.set()
-                UIRectFill(CGRect(x: 0, y: 0, width: 1, height: 1))
-                
-                let backgroundImage = UIGraphicsGetImageFromCurrentImageContext()!
-                button.setBackgroundImage(backgroundImage, for: .normal)
-                button.setBackgroundImage(backgroundImage, for: .disabled)
-            }
-            self.addSubview(button)
-        }
-
-        do { // diskView
-            diskView.translatesAutoresizingMaskIntoConstraints = false
-            self.addSubview(diskView)
-        }
-
-        setNeedsLayout()
-    }
-    
+    // MARK: - Public Method
     public override func layoutSubviews() {
         super.layoutSubviews()
         
         button.frame = bounds
         layoutDiskView()
     }
-    
-    private func layoutDiskView() {
-        let cellSize = bounds.size
-        let diskDiameter = Swift.min(cellSize.width, cellSize.height) * 0.8
-        let diskSize: CGSize
-        if _disk == nil || diskView.disk == _disk {
-            diskSize = CGSize(width: diskDiameter, height: diskDiameter)
-        } else {
-            diskSize = CGSize(width: 0, height: diskDiameter)
-        }
-        diskView.frame = CGRect(
-            origin: CGPoint(x: (cellSize.width - diskSize.width) / 2, y: (cellSize.height - diskSize.height) / 2),
-            size: diskSize
-        )
-        diskView.alpha = _disk == nil ? 0.0 : 1.0
-    }
-    
+    /// ディスクの状態を更新する
     public func setDisk(_ disk: Disk?, animated: Bool, completion: ((Bool) -> Void)? = nil) {
         let diskBefore: Disk? = _disk
         _disk = disk
@@ -135,5 +99,49 @@ public class CellView: UIView {
     
     public var allControlEvents: UIControl.Event {
         button.allControlEvents
+    }
+    
+    // MARK: - Private Method
+    private func setUp() {
+        do { // button
+            // AutoSizingからAutoLayoutへの自動変換を無効にする
+            button.translatesAutoresizingMaskIntoConstraints = false
+            do { // backgroundImage
+                UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+                defer { UIGraphicsEndImageContext() }
+                
+                let color: UIColor = UIColor(named: "CellColor")!
+                color.set()
+                UIRectFill(CGRect(x: 0, y: 0, width: 1, height: 1))
+                
+                let backgroundImage = UIGraphicsGetImageFromCurrentImageContext()!
+                button.setBackgroundImage(backgroundImage, for: .normal)
+                button.setBackgroundImage(backgroundImage, for: .disabled)
+            }
+            self.addSubview(button)
+        }
+
+        do { // diskView
+            diskView.translatesAutoresizingMaskIntoConstraints = false
+            self.addSubview(diskView)
+        }
+
+        setNeedsLayout()
+    }
+    
+    private func layoutDiskView() {
+        let cellSize = bounds.size
+        let diskDiameter = Swift.min(cellSize.width, cellSize.height) * 0.8
+        let diskSize: CGSize
+        if _disk == nil || diskView.disk == _disk {
+            diskSize = CGSize(width: diskDiameter, height: diskDiameter)
+        } else {
+            diskSize = CGSize(width: 0, height: diskDiameter)
+        }
+        diskView.frame = CGRect(
+            origin: CGPoint(x: (cellSize.width - diskSize.width) / 2, y: (cellSize.height - diskSize.height) / 2),
+            size: diskSize
+        )
+        diskView.alpha = _disk == nil ? 0.0 : 1.0
     }
 }

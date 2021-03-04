@@ -1,3 +1,7 @@
+/**
+ * ディスク（黒か白か）を表すデータ構造
+ */
+
 public enum Disk {
     case dark
     case light

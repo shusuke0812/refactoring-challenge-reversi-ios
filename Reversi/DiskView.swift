@@ -1,3 +1,7 @@
+/**
+ * ディスクを表す`UIView`のサブクラス
+ */
+
 import UIKit
 
 public class DiskView: UIView {

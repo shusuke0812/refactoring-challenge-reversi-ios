@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Reversi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Reversi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NzD-77-9Io" userLabel="Message View">
-                                <rect key="frame" x="149" y="44" width="116.5" height="38.5"/>
+                                <rect key="frame" x="148" y="44" width="118" height="38.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhS-zB-FaD" customClass="DiskView" customModule="Reversi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="7.5" width="24" height="24"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xhS-zB-FaD" secondAttribute="height" multiplier="1:1" id="KrS-Cb-Y0n"/>
                                             <constraint firstAttribute="height" constant="24" id="gHu-Ly-73K"/>
@@ -31,13 +32,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'s turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHv-pJ-hrU">
-                                        <rect key="frame" x="32" y="0.0" width="84.5" height="38.5"/>
+                                        <rect key="frame" x="32" y="0.0" width="86" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="nHv-pJ-hrU" secondAttribute="trailing" id="69g-vw-mXi"/>
                                     <constraint firstItem="xhS-zB-FaD" firstAttribute="centerY" secondItem="NzD-77-9Io" secondAttribute="centerY" id="9I5-zt-1GL"/>
@@ -59,7 +60,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hug-Cn-gDb" customClass="DiskView" customModule="Reversi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2.5" width="26" height="26"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26" id="FhH-YY-1hc"/>
                                             <constraint firstAttribute="width" secondItem="hug-Cn-gDb" secondAttribute="height" multiplier="1:1" id="pJA-zh-udZ"/>
@@ -106,7 +107,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="090-uk-vsm" customClass="DiskView" customModule="Reversi" customModuleProvider="target">
                                         <rect key="frame" x="244" y="2.5" width="26" height="26"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="090-uk-vsm" secondAttribute="height" multiplier="1:1" id="9YY-aS-UEg"/>
                                             <constraint firstAttribute="height" constant="26" id="txz-Ui-bDn"/>
@@ -148,7 +149,7 @@
                                     <constraint firstAttribute="trailing" secondItem="090-uk-vsm" secondAttribute="trailing" id="skQ-ot-DYa"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cI-5a-D7h">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cI-5a-D7h">
                                 <rect key="frame" x="187.5" y="832" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
@@ -156,7 +157,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3cI-5a-D7h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7v4-Ux-uYI"/>
                             <constraint firstItem="zq8-hK-TyQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="248" constant="20" id="8IT-m3-eRu"/>
@@ -175,7 +177,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zq8-hK-TyQ" secondAttribute="trailing" constant="20" id="tiL-HG-p92"/>
                             <constraint firstItem="zq8-hK-TyQ" firstAttribute="leading" secondItem="Mdv-qG-dMQ" secondAttribute="leading" id="wL9-TF-dBg"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="boardView" destination="zq8-hK-TyQ" id="7Tx-KA-DlY"/>
@@ -199,5 +200,8 @@
         <namedColor name="CellColor">
             <color red="0.42352941176470588" green="0.49803921568627452" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
